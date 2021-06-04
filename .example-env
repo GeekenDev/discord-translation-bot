@@ -1,0 +1,8 @@
+ENwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is linked to this channel (english)"
+RUwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is linked to this channel (russian)"
+SPwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is linked to this channel (spanish)"
+DEwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is linked to this channel (german)"
+PLwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is linked to this channel (polish)"
+
+discordBotToken="Google how to generate a discord bot token and replace this"
+deepLKey="Place your DeepL API Key Here"
