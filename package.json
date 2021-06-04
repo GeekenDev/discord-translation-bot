@@ -1,0 +1,19 @@
+{
+    "name": "brime-discord-translator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Brime - (Geeken)",
+    "license": "MIT",
+    "dependencies": {
+      "deepl": "^1.0.10",
+      "discord.js": "^12.5.3",
+      "dotenv": "^10.0.0",
+      "node-fetch": "^2.6.1"
+    }
+  }
+  
