@@ -70,7 +70,7 @@ client.on('message', msg => {
                 transMsg(msg.content, msg.author, brimeLangChannels[key], key)
             })
         }
-        // Check if the message contains ony an attachment. If true, then just proxy the message to the receiving channels without translating.
+        // Check if the message contains only an attachment. If true, then just proxy the message to the receiving channels without translating.
         if (msg.attachments.size > 0 && !msg.content) {
             msg.attachments.forEach(Attachment => {
                 Object.keys(brimeLangChannels).forEach(function (key) {
