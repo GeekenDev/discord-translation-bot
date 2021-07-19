@@ -6,3 +6,5 @@ PLwebhookClientKey="REPLACE THIS WITH THE WEBHOOK TOKEN for the webhook that is 
 
 discordBotToken="Google how to generate a discord bot token and replace this"
 deepLKey="Place your DeepL API Key Here"
+
+stripEveryoneMention=1
