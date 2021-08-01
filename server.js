@@ -4,7 +4,7 @@
 // |  _ <| '__| | '_ ` _ \ / _ \ | |  | | / __|/ __/ _ \| '__/ _` |    | | '__/ _` | '_ \/ __| |/ _` | __/ _ \| '__|
 // | |_) | |  | | | | | | |  __/ | |__| | \__ \ (_| (_) | | | (_| |    | | | | (_| | | | \__ \ | (_| | || (_) | |   
 // |____/|_|  |_|_| |_| |_|\___| |_____/|_|___/\___\___/|_|  \__,_|    |_|_|  \__,_|_| |_|___/_|\__,_|\__\___/|_|   
-                                                                                                                 
+
 /////////////////////////
 // Written by: Geeken //
 ///////////////////////
@@ -55,6 +55,10 @@ client.on('message', msg => {
 
         // Remove the channel that the message was sent on from the translated receiving end.
         delete brimeLangChannels[msgChannel]
+
+        // Remove the @everyone mention from the message.
+        // This is because Discord doesn't like @everyone mentions.
+        msg.content = msg.content.replace(/@everyone/gi, "/// This user attempted to @ Everyone - Ban Them. (-Geeken) ///")
 
         // Drop messages sent from Webhooks to prevent loop. && Verify that the message contains text to be translated and is not an attachment.
         if (!msg.webhookID && msg.content) {
