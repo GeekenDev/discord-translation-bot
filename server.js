@@ -58,7 +58,7 @@ client.on('message', msg => {
 
         // Remove the @everyone mention from the message.
         // This is because Discord doesn't like @everyone mentions.
-        msg.content = msg.content.replace(/@everyone/gi, "/// This user attempted to @ Everyone - Ban Them. (-Geeken) ///")
+        let sanatizedMsg = msg.content.replace(/@everyone/gi, "/// This user attempted to @ Everyone - Ban Them. (-Geeken) ///")
 
         // Drop messages sent from Webhooks to prevent loop. && Verify that the message contains text to be translated and is not an attachment.
         if (!msg.webhookID && msg.content) {
@@ -66,12 +66,13 @@ client.on('message', msg => {
             Message Received: { 
                "channel": ${msg.channel.name},
                "sender": ${msg.author.username},
-               "message": ${msg.content}
+               "message": ${msg.content},
+               "sanatizedMsg": ${sanatizedMsg}
             }
         }`)
             // Call a translate function for each of the channels that should received a localized version of the message.
             Object.keys(brimeLangChannels).forEach(function (key) {
-                transMsg(msg.content, msg.author, brimeLangChannels[key], key)
+                transMsg(sanatizedMsg, msg.author, brimeLangChannels[key], key)
             })
         }
         // Check if the message contains only an attachment. If true, then just proxy the message to the receiving channels without translating.
